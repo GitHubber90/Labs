@@ -16,7 +16,7 @@ class Heap:
         #   moves the number up in the array by checking the position of the father at (i-1)//2, and if the number is
         #   smaller than the father switches the two numbers
         while (i-1)//2 >= 0:
-            if self.heap_array[(i-1)//2] > self.heap_array[i]:
+            if self.heap_array[(i-1)//2] > self.heap_array[i]:                                 #simple code that gets to the point i lke it!
                 temp = self.heap_array[(i-1)//2]
                 self.heap_array[(i-1)//2] = self.heap_array[i]
                 self.heap_array[i] = temp
@@ -34,7 +34,7 @@ class Heap:
         #   checks if the children are smaller than the number that was moved upwards and reorganizes the array
         #   arcordingly to left and right child sizes
         i = 0
-        while ((i*2) + 2) < len(self.heap_array):
+        while ((i*2) + 2) < len(self.heap_array):                                #instead of doing the formula i*2+1 or +2 why not just assign variables like right child or left child
             #   if the second child(right node in tree) is less than the father and its sibling, it switches the right
             #   node with the father
             if self.heap_array[(i*2)+1] > self.heap_array[(i*2)+2] and self.heap_array[i] > self.heap_array[(i*2)+2]:
@@ -74,7 +74,8 @@ def fileinsert(minheaparray, filename):
     try:
         with open(filename) as ins:
             for line in ins:
-                line = line.replace("\n", "")
+                line = line.replace("\n", "")                           #I do not know what this code does though 
+                                                                         #why are you replacing wouldn't you only need the split function only
                 line = line.replace(" ", "")
                 num = line.split(",")
                 for i in num:
@@ -104,6 +105,6 @@ def main():
         print("extracting min")
         minheaparray.extract_min()
         minheaparray.printlist()
-
+                                                                  #Very nice and cleanly readable code great work!
 
 main()
